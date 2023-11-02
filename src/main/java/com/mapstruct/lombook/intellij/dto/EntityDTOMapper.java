@@ -1,18 +1,14 @@
 package com.mapstruct.lombook.intellij.dto;
 
 import com.mapstruct.lombook.intellij.model.User;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.mapstruct.MappingTarget;
-import org.mapstruct.Mappings;
-import org.mapstruct.NullValueCheckStrategy;
-import org.mapstruct.NullValueMappingStrategy;
-import org.mapstruct.ReportingPolicy;
+import org.mapstruct.*;
 
 @Mapper(componentModel = "spring",
         nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS,
         unmappedTargetPolicy = ReportingPolicy.IGNORE,
-        nullValueMappingStrategy = NullValueMappingStrategy.RETURN_DEFAULT
+        unmappedSourcePolicy = ReportingPolicy.IGNORE,
+        nullValueMappingStrategy = NullValueMappingStrategy.RETURN_DEFAULT,
+        nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE
 )
 //@formatter:on
 public interface EntityDTOMapper {
@@ -24,4 +20,6 @@ public interface EntityDTOMapper {
     User patchUserWithUserUpdateDTO(UserUpdateDTO userUpdateDTO, @MappingTarget User user);
 
     UserDTO mapUserToUserDTO(User patchedUser);
+
+    User mapUserDTOToUser(UserDTO userDTO);
 }

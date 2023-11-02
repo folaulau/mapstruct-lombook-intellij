@@ -9,4 +9,6 @@ public interface UserService {
     AuthenticationResponseDTO authenticate(AuthenticatorDTO authenticatorDTO);
 
     UserDTO update(UserUpdateDTO userUpdateDTO);
+
+    UserDTO getProfile();
 }

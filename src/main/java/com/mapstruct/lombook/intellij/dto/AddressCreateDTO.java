@@ -8,26 +8,21 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 
 @Builder
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonInclude(value = Include.NON_NULL)
-public class UserDTO implements Serializable {
+public class AddressCreateDTO implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private Long id;
+    private String street;
 
-    private String firstName;
+    private String city;
 
-    private String lastName;
+    private String zipcode;
 
-    private String email;
-
-    private LocalDate dob;
-
-    private AddressDTO address;
+    private String state;
 }

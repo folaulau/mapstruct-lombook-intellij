@@ -1,12 +1,11 @@
 package com.mapstruct.lombook.intellij.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -16,19 +15,17 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonInclude(value = Include.NON_NULL)
-public class User implements Serializable {
+public class Address implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     private Long id;
 
-    private String firstName;
+    private String street;
 
-    private String lastName;
+    private String city;
 
-    private String email;
+    private String zipcode;
 
-    private LocalDate dob;
-
-    private Address address;
+    private String state;
 }

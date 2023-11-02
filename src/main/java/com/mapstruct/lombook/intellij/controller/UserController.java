@@ -43,4 +43,15 @@ public class UserController {
 
         return new ResponseEntity<>(userDTO, OK);
     }
+
+    @Operation(summary = "Get Profile")
+    @GetMapping(value = "/profile")
+    public ResponseEntity<UserDTO> getProfile() {
+
+        log.info("getProfile");
+
+        UserDTO userDTO = userService.getProfile();
+
+        return new ResponseEntity<>(userDTO, OK);
+    }
 }
