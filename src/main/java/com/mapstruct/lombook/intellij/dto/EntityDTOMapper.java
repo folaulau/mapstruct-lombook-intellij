@@ -17,8 +17,11 @@ import org.mapstruct.ReportingPolicy;
 //@formatter:on
 public interface EntityDTOMapper {
 
-    @Mappings({@Mapping(target = "id", ignore = true), @Mapping(target = "email", ignore = true)})
-    User patchUserWithUserUpdateDTO(UserUpdateDTO userUpdateDTO, User user);
+    @Mappings({
+            @Mapping(target = "id", ignore = true),
+            @Mapping(target = "email", ignore = true)
+    })
+    User patchUserWithUserUpdateDTO(UserUpdateDTO userUpdateDTO, @MappingTarget User user);
 
     UserDTO mapUserToUserDTO(User patchedUser);
 }
