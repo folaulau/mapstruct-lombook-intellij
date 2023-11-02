@@ -1,0 +1,1 @@
+# mapstruct-lombook-intellij
